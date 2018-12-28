@@ -2,12 +2,12 @@
 <div class="top-space">
 	
 	<div class="row">
-		<div class="col-xs-4 text-left letra-times-new-roman vertical">
+		<div class="col-xs-12 col-md-12 text-left letra-times-new-roman vertical">
 			<%= link_to brand_path(article.brand.id), data: { turbolinks: false}  do %>
 				<%= article.phone.name %>
 			<%end%>
 		</div>
-		<div class="row col-xs-5 last-xs text-right letra-times-new-roman">
+		<div class="row col-xs-12 last-xs text-right letra-times-new-roman">
       <div class="col-xs-2">
         <% if article.user.photo_file_name.nil? %>
             <%= image_tag "new_perfil_mini.png", class: "circular"  %>
@@ -43,24 +43,22 @@
 			<%end%>
 		</div>
 		<div class="row">
-			<div class="col-xs-6 text-left letra-times-new-roman grey">
-        <% unless article.city.nil? %>
+			
+			<div class="col-xs-6 last-xs text-right letra-times-new-roman negrilla">
+				<% unless article.city.nil? %>
 				  <%= article.city.name %>
         <% end %>
-			</div>
-			<div class="col-xs-6 last-xs text-right letra-times-new-roman negrilla">
-				Precio: <%= number_to_currency(article.precio, precision: 0)%>
+				<%= number_to_currency(article.precio, precision: 0)%>
 			</div>
 		</div>
 		<div class="text-justify letra-lucida-grande">
 			<h4 style="margin: 5px; margin-left: 0px"> caracteristicas: </h4>
-      Sistema operativo: <%= article.operating_system %> -
-      Tamaño de pantalla: <%= article.screen_size %> -
-      Cámara frontal: <%= article.front_camera %> -
-      Cámara trasera: <%= article.back_camera %> -
-      Memoria RAM:: <%= article.ram %> -
-      Almacenamiento interno: <%= article.internal_storage %>
-
+		      Sistema operativo: <%= article.operating_system %> -
+		      Tamaño de pantalla: <%= article.screen_size %> -
+		      Cámara frontal: <%= article.front_camera %> -
+		      Cámara trasera: <%= article.back_camera %> -
+		      Memoria RAM:: <%= article.ram %> -
+		      Almacenamiento interno: <%= article.internal_storage %>
 		</div>
 	<% end %>
 	<div class="row col-xs-12 no-margin no-padding">
